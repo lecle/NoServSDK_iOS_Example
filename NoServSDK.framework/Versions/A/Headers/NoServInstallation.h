@@ -6,6 +6,11 @@
 //  Copyright (c) 2014년 JinWoo Lee. All rights reserved.
 //
 
+
+#import <Foundation/Foundation.h>
+#import "ConditionalJSONObject.h"
+#import "ResultBlock.h"
+
 /**
  NoServInstallation 클래스
  
@@ -16,31 +21,23 @@
  갯수 검색
  Installation 삭제
  */
-#import <Foundation/Foundation.h>
-#import "JSONObject.h"
-#import "ConditionalJSONObject.h"
-
-typedef void (^JSONObjectFetched) (JSONObject *jsonObject);
-typedef void (^JSONObjectListFetched) (NSArray *jsonObjectList);
-typedef void (^CountFetched) (NSInteger count);
-typedef void (^Error) (NSError *error);
-
 @interface NoServInstallation : NSObject
 
 /**
  Installation 생성
  
  @param deviceToken  Device Token
+ @param jsonObject   정보 오브젝트
  @param errorBlock   오류시 호출되는 블럭
  @param successBlock 성공시 호출되는 블럭
  */
-+(void)createWithDeviceToken:(NSString*)deviceToken onError:(Error)errorBlock onSuccess:(JSONObjectFetched)successBlock;
++(void)createWithDeviceToken:(NSString*)deviceToken withJSONObject:(JSONObject*)jsonObject onError:(Error)errorBlock onSuccess:(JSONObjectFetched)successBlock;
 
 
 /**
  Installation 가져오기
  
- @param objectId     Object Id
+ @param objectId     Object ID
  @param errorBlock   오류시 호출되는 블럭
  @param successBlock 성공시 호출되는 블럭
  */
@@ -49,7 +46,7 @@ typedef void (^Error) (NSError *error);
 /**
  Installation 변경
  
- @param objectId     Object Id
+ @param objectId     Object ID
  @param jsonObject   변경할 오브젝트
  @param errorBlock   오류시 호출되는 블럭
  @param successBlock 성공시 호출되는 블럭
@@ -59,7 +56,7 @@ typedef void (^Error) (NSError *error);
 /**
  Installation 검색
  
- @param conditionJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
+ @param conditionalJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
  @param masterKey           Master Key
  @param errorBlock          오류시 호출되는 블럭
  @param successBlock        성공시 호출되는 블럭
@@ -69,7 +66,7 @@ typedef void (^Error) (NSError *error);
 /**
  갯수 검색
  
- @param conditionJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
+ @param conditionalJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
  @param masterKey           Master Key
  @param errorBlock          오류시 호출되는 블럭
  @param successBlock        성공시 호출되는 블럭
@@ -79,7 +76,7 @@ typedef void (^Error) (NSError *error);
 /**
  Installation 삭제
  
- @param objectId     Object Id
+ @param objectId     Object ID
  @param masterKey    Master Key
  @param errorBlock   오류시 호출되는 블럭
  @param successBlock 성공시 호출되는 블럭

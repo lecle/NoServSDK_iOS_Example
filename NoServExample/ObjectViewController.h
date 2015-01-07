@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ObjectViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITextView *logView;
+- (IBAction)backTouched:(id)sender;
+- (IBAction)createTouched:(id)sender;
+- (IBAction)retrieveTouched:(id)sender;
+- (IBAction)updateTouched:(id)sender;
+- (IBAction)queryTouched:(id)sender;
+- (IBAction)deleteTouched:(id)sender;
 @end

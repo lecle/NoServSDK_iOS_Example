@@ -13,10 +13,8 @@
  파일 삭제
  */
 #import <Foundation/Foundation.h>
-#import "JSONObject.h"
+#import "ResultBlock.h"
 
-typedef void (^JSONObjectFetched) (JSONObject *jsonObject);
-typedef void (^Error) (NSError *error);
 
 @interface NoServFile : NSObject
 /**
@@ -37,7 +35,7 @@ typedef void (^Error) (NSError *error);
 /**
  파일 삭제
  
- @param filename            삭제할 파일의 이름
+ @param filename            오리지널 파일의 이름
  @param masterKey           Master Key
  @param errorBlock          오류시 호출되는 블럭
  @param successBlock        성공시 호출되는 블럭

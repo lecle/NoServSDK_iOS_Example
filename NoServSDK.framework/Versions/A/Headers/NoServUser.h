@@ -19,11 +19,8 @@
 #import <Foundation/Foundation.h>
 #import "NoServUserInfo.h"
 #import "ConditionalJSONObject.h"
+#import "ResultBlock.h"
 
-typedef void (^UserInfoFetched) (NoServUserInfo *userInfo);
-typedef void (^UserInfoListFetched) (NSArray *userInfoList);
-typedef void (^CountFetched) (NSInteger count);
-typedef void (^Error) (NSError *error);
 
 @interface NoServUser : NSObject
 /** 유저 생성 함수
@@ -64,9 +61,9 @@ typedef void (^Error) (NSError *error);
 +(void)logInWithUsername:(NSString*)username withPassword:(NSString*)password onError:(Error)errorBlock onSuccess:(UserInfoFetched)successBlock;
 
 /**
- Object Id로 유저정보를 검색
+ Object ID로 유저정보를 검색
  
- @param objectId     Object Id
+ @param objectId     Object ID
  @param errorBlock   오류시 호출되는 블럭
  @param successBlock 성공시 호출되는 블럭
  */
@@ -82,9 +79,9 @@ typedef void (^Error) (NSError *error);
 +(void)validateMeWithSessionToken:(NSString*)sessionToken onError:(Error)errorBlock onSuccess:(UserInfoFetched)successBlock;
 
 /**
- Object Id로 유저 업데이트
+ Object ID로 유저 업데이트
  
- @param objectId     Object Id
+ @param objectId     Object ID
  @param sessionToken Session Token
  @param userInfo     업데이트할 유저 정보
  @param errorBlock   오류시 호출되는 블럭
@@ -96,18 +93,18 @@ typedef void (^Error) (NSError *error);
 /**
  유저 검색
  
- @param conditionJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
- @param errorBlock          오류시 호출되는 블럭
- @param successBlock        성공시 호출되는 블럭
+ @param conditionalJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
+ @param errorBlock            오류시 호출되는 블럭
+ @param successBlock          성공시 호출되는 블럭
  */
 +(void)queryListWithConditionObject:(ConditionalJSONObject*)conditionalJsonObject onError:(Error)errorBlock onSuccess:(UserInfoListFetched)successBlock;
 
 /**
  갯수 검색
  
- @param conditionJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
- @param errorBlock          오류시 호출되는 블럭
- @param successBlock        성공시 호출되는 블럭
+ @param conditionalJsonObject 검색 조건 오브젝트(And 조건으로 묶임)
+ @param errorBlock            오류시 호출되는 블럭
+ @param successBlock          성공시 호출되는 블럭
  */
 +(void)getCountWithConditionObject:(ConditionalJSONObject*)conditionalJsonObject onError:(Error)errorBlock onSuccess:(CountFetched)successBlock;
 
@@ -115,7 +112,7 @@ typedef void (^Error) (NSError *error);
 /**
  유저 삭제
  
- @param objectId     Object Id
+ @param objectId     Object ID
  @param sessionToken Session Token
  @param errorBlock   오류시 호출되는 블럭
  @param successBlock 성공시 호출되는 블럭

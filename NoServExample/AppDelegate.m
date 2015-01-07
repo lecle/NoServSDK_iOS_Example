@@ -56,7 +56,6 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    
 }
 
 #pragma mark - Notification
@@ -65,8 +64,7 @@
     NSString *deviceID = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     NSLog(@"%@", deviceID);
-    
-    [NoServInstallation createWithDeviceToken:deviceID onError:^(NSError *error) {
+    [NoServInstallation createWithDeviceToken:deviceID withJSONObject:nil onError:^(NSError *error) {
         NSLog(@"Error : %@", error);
     } onSuccess:^(JSONObject *jsonObject) {
         NSLog(@"Success : %@", jsonObject);

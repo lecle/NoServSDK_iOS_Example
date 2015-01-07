@@ -8,6 +8,16 @@
 
 /**
  Push Notification Info 클래스
+ 
+ Channel, Where, 푸시 정보를 저장한다.
+ 
+    NoServPushInfo *pushInfo = [[NoServPushInfo alloc] init];
+    [pushInfo addChannel:@"Giants"];
+    [pushInfo addWhereValue:YES forKey:@"scores"];
+    [pushInfo addWhereValue:YES forKey:@"gameResults"];
+    [pushInfo addWhereValue:YES forKey:@"injuryReports"];
+    [pushInfo setAlert:@"The Giants won against the Mets 2-3."];
+ 
  */
 #import <Foundation/Foundation.h>
 #import "JSONObject.h"
@@ -24,10 +34,10 @@
 /**
  Where Condition에 값 추가
  
- @param value 검색할 값
- @param key   검색할 키
+ @param hasKey 구독 여부
+ @param key    검색할 키
  */
--(void)addConditionValue:(NSString*)value forKey:(NSString*)key;
+-(void)addWhereValue:(BOOL)hasKey forKey:(NSString*)key;
 
 /**
  Alert 값 설정(iOS, Android)

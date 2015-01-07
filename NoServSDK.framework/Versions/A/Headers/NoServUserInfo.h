@@ -44,7 +44,6 @@
  @param username 유저네임
  @param password 패스워드
  @return 인스턴스
- @see init
  */
 -(instancetype)initWithUsername:(NSString*)username withPassword:(NSString*)password;
 

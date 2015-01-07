@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface FileViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *logView;
+- (IBAction)backTouched:(id)sender;
+- (IBAction)uploadTouched:(id)sender;
+- (IBAction)deleteTouched:(id)sender;
+
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D22607B1A5B80B9009A3227 /* game.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D22607A1A5B80B9009A3227 /* game.jpg */; };
 		9D6DA5871A2FAF94003306AE /* NoServSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6DA5851A2FAF91003306AE /* NoServSDK.framework */; };
 		9D6DA58C1A2FB762003306AE /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6DA58B1A2FB762003306AE /* UserViewController.m */; };
 		9D6DA58F1A2FB76B003306AE /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6DA58E1A2FB76B003306AE /* FileViewController.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D22607A1A5B80B9009A3227 /* game.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game.jpg; sourceTree = "<group>"; };
 		9D6DA5851A2FAF91003306AE /* NoServSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NoServSDK.framework; sourceTree = "<group>"; };
 		9D6DA58A1A2FB762003306AE /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		9D6DA58B1A2FB762003306AE /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		9DDFB1AB1A2D7A87009B4572 /* NoServExample */ = {
 			isa = PBXGroup;
 			children = (
+				9D22607A1A5B80B9009A3227 /* game.jpg */,
 				9DDFB1B01A2D7A87009B4572 /* AppDelegate.h */,
 				9DDFB1B11A2D7A87009B4572 /* AppDelegate.m */,
 				9DDFB1B31A2D7A87009B4572 /* ViewController.h */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DDFB1B81A2D7A87009B4572 /* Main.storyboard in Resources */,
+				9D22607B1A5B80B9009A3227 /* game.jpg in Resources */,
 				9DDFB1BD1A2D7A87009B4572 /* LaunchScreen.xib in Resources */,
 				9DDFB1BA1A2D7A87009B4572 /* Images.xcassets in Resources */,
 			);

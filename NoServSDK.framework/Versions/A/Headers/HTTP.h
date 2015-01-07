@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "CRUD.h"
 
-/** CRUD를 HTTP로 구현한 클래스
+/** CRUD를 HTTP 프로토콜로 구현한 클래스
  */
 @interface HTTP : CRUD
 /** HTTP 헤더에 Application ID 추가
  
- @param Application ID 값
+ @param applicationId Application ID 값
  */
 
 +(void)setApplicationId:(NSString*)applicationId;
@@ -22,7 +22,7 @@
 
 /** HTTP 헤더에 REST API Key 추가
  
- @param REST API Key 값
+ @param restApiKey REST API Key 값
  */
 +(void)setRESTAPIKey:(NSString*)restApiKey;
 
@@ -41,7 +41,7 @@
 +(void)setMasterKey:(NSString*)masterKey;
 
 /**
- HTTP Post 프로토콜을 사용하여 파일 업로드
+ HTTP POST 프로토콜을 사용하여 파일 업로드
  
  @param url          업로드될 URL
  @param data         업로드할 파일 Data

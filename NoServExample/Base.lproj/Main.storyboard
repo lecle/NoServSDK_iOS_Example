@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmR-JB-J1E">
@@ -64,21 +64,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="17" y="-247"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="NPz-1N-7bi">
             <objects>
-                <viewController id="Mqt-os-hbp" sceneMemberID="viewController">
+                <viewController id="Mqt-os-hbp" customClass="UserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HXN-8m-S7O"/>
                         <viewControllerLayoutGuide type="bottom" id="wd7-8Q-nRY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="53R-qg-sal">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AJ-lt-dtd">
@@ -86,25 +87,102 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="fS6-J9-fyU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKy-nA-BWp">
+                                <rect key="frame" x="16" y="58" width="288" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjP-Fc-pm4">
+                                <rect key="frame" x="16" y="194" width="152" height="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="DXS-Cw-B9w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDk-q7-0yF">
+                                <rect key="frame" x="16" y="232" width="152" height="30"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="L9m-fA-3bD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jj3-Tk-L1c">
+                                <rect key="frame" x="16" y="269" width="152" height="30"/>
+                                <state key="normal" title="Retrieve">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retrieveTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="x3c-er-gre"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ny-6o-Acx">
+                                <rect key="frame" x="16" y="307" width="152" height="30"/>
+                                <state key="normal" title="Validating Tokens">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="validateTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="nRR-hZ-5S7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGj-KC-iU0">
+                                <rect key="frame" x="16" y="345" width="152" height="30"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="5Zi-Uq-eN4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq1-Hi-xRw">
+                                <rect key="frame" x="16" y="382" width="152" height="30"/>
+                                <state key="normal" title="Query">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="queryTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="3aJ-ik-YnV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUk-NS-Khz">
+                                <rect key="frame" x="16" y="420" width="152" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTouched:" destination="Mqt-os-hbp" eventType="touchUpInside" id="l9p-cK-dZc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logView" destination="sKy-nA-BWp" id="pYf-Ef-iZd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC0-tI-aLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="790" y="-245"/>
         </scene>
-        <!--View Controller-->
+        <!--Push View Controller-->
         <scene sceneID="USe-Ef-WyP">
             <objects>
-                <viewController id="tyB-8R-Dih" sceneMemberID="viewController">
+                <viewController id="tyB-8R-Dih" customClass="PushViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R9z-ix-UQy"/>
                         <viewControllerLayoutGuide type="bottom" id="Cv0-xg-5xg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jm8-Os-6XR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbs-uS-ycu">
@@ -112,25 +190,66 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backTouched:" destination="tyB-8R-Dih" eventType="touchUpInside" id="iiD-Nx-jMO"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEN-IR-7rc">
+                                <rect key="frame" x="16" y="58" width="288" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-mH-arB">
+                                <rect key="frame" x="16" y="194" width="152" height="30"/>
+                                <state key="normal" title="Push">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushTouched:" destination="tyB-8R-Dih" eventType="touchUpInside" id="OqN-rp-r01"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-pd-gX6">
+                                <rect key="frame" x="16" y="232" width="152" height="30"/>
+                                <state key="normal" title="Retrieve">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retrieveTouched:" destination="tyB-8R-Dih" eventType="touchUpInside" id="m38-mS-eEB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBH-Ga-5xG">
+                                <rect key="frame" x="16" y="270" width="152" height="30"/>
+                                <state key="normal" title="Query">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="queryTouched:" destination="tyB-8R-Dih" eventType="touchUpInside" id="LBw-6R-chR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logView" destination="OEN-IR-7rc" id="9Hd-W5-fJI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfl-xb-Vyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1563" y="-247"/>
         </scene>
-        <!--View Controller-->
+        <!--Installation View Controller-->
         <scene sceneID="bdO-wj-Q1o">
             <objects>
-                <viewController id="C0K-KF-hez" sceneMemberID="viewController">
+                <viewController id="C0K-KF-hez" customClass="InstallationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Zc-Si-HRB"/>
                         <viewControllerLayoutGuide type="bottom" id="fWU-Bo-cCr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ppz-w4-6RH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEG-st-vwB">
@@ -138,25 +257,84 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backTouched:" destination="C0K-KF-hez" eventType="touchUpInside" id="gfs-41-iAC"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xa-UU-fQx">
+                                <rect key="frame" x="16" y="58" width="288" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI6-DA-yAC">
+                                <rect key="frame" x="16" y="194" width="152" height="30"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTouched:" destination="C0K-KF-hez" eventType="touchUpInside" id="jHk-jc-1JK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0R-YH-uLA">
+                                <rect key="frame" x="16" y="232" width="152" height="30"/>
+                                <state key="normal" title="Retrieve">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retrieveTouched:" destination="C0K-KF-hez" eventType="touchUpInside" id="hUc-bf-zTv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58J-5q-JjQ">
+                                <rect key="frame" x="16" y="270" width="152" height="30"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateTouched:" destination="C0K-KF-hez" eventType="touchUpInside" id="knl-ri-4SG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJm-oi-ASd">
+                                <rect key="frame" x="16" y="307" width="152" height="30"/>
+                                <state key="normal" title="Query">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="queryTouched:" destination="C0K-KF-hez" eventType="touchUpInside" id="H7z-ig-EaA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEL-Ux-rOA">
+                                <rect key="frame" x="16" y="345" width="152" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTouched:" destination="C0K-KF-hez" eventType="touchUpInside" id="Kse-ih-7l1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logView" destination="9Xa-UU-fQx" id="pVs-fV-IjW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5za-nZ-7sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1563" y="431"/>
         </scene>
-        <!--View Controller-->
+        <!--Object View Controller-->
         <scene sceneID="P49-Dd-IYZ">
             <objects>
-                <viewController id="bdE-69-rol" sceneMemberID="viewController">
+                <viewController id="bdE-69-rol" customClass="ObjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hZe-9x-ti6"/>
                         <viewControllerLayoutGuide type="bottom" id="I1E-TK-AB6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dnL-8H-vDW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raP-rg-7Et">
@@ -164,25 +342,84 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backTouched:" destination="bdE-69-rol" eventType="touchUpInside" id="1eJ-aJ-QlT"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5P-i7-PhJ">
+                                <rect key="frame" x="16" y="58" width="288" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnS-Oi-Rr7">
+                                <rect key="frame" x="16" y="194" width="152" height="30"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTouched:" destination="bdE-69-rol" eventType="touchUpInside" id="ebE-xr-alB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9us-ZY-FCj">
+                                <rect key="frame" x="16" y="232" width="152" height="30"/>
+                                <state key="normal" title="Retrieve">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retrieveTouched:" destination="bdE-69-rol" eventType="touchUpInside" id="iPF-72-xvu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-mW-Z4R">
+                                <rect key="frame" x="16" y="270" width="152" height="30"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateTouched:" destination="bdE-69-rol" eventType="touchUpInside" id="V5J-Yf-zcr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-0T-wRg">
+                                <rect key="frame" x="16" y="307" width="152" height="30"/>
+                                <state key="normal" title="Query">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="queryTouched:" destination="bdE-69-rol" eventType="touchUpInside" id="iYg-ue-Snw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0I-jz-R8h">
+                                <rect key="frame" x="16" y="345" width="152" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTouched:" destination="bdE-69-rol" eventType="touchUpInside" id="9Lr-iy-UJw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logView" destination="y5P-i7-PhJ" id="WAN-2X-qhP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgC-rZ-ISJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="790" y="439"/>
         </scene>
-        <!--View Controller-->
+        <!--File View Controller-->
         <scene sceneID="bAz-ID-mDI">
             <objects>
-                <viewController id="E1D-xW-8WQ" sceneMemberID="viewController">
+                <viewController id="E1D-xW-8WQ" customClass="FileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PmV-XU-xaX"/>
                         <viewControllerLayoutGuide type="bottom" id="j39-N3-fHz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Pu-az-B1D">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-u3-ZnN">
@@ -190,10 +427,42 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backTouched:" destination="E1D-xW-8WQ" eventType="touchUpInside" id="geu-bq-kdZ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncs-Dw-pUN">
+                                <rect key="frame" x="16" y="58" width="288" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtQ-8X-IlJ">
+                                <rect key="frame" x="16" y="194" width="152" height="30"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadTouched:" destination="E1D-xW-8WQ" eventType="touchUpInside" id="b8t-mp-SBg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsR-cY-2YP">
+                                <rect key="frame" x="16" y="232" width="152" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTouched:" destination="E1D-xW-8WQ" eventType="touchUpInside" id="A9d-7x-tA9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logView" destination="Ncs-Dw-pUN" id="ay7-lg-NG0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyr-hV-MTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

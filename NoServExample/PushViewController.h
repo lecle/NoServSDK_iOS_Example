@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PushViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *logView;
+- (IBAction)pushTouched:(id)sender;
+- (IBAction)retrieveTouched:(id)sender;
+- (IBAction)queryTouched:(id)sender;
+- (IBAction)backTouched:(id)sender;
+
 
 @end

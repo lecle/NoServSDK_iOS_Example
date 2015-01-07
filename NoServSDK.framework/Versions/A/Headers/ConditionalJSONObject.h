@@ -16,6 +16,9 @@
 /**
  검색 조건에 값 추가
  
+    ConditionalJSONObject *json = [[ConditionalJSONObject alloc] init];
+    [json addEqualValue:@"value" forKey:@"key"];
+ 
  @param value 검색할 값
  @param key   검색할 키
  */
@@ -37,6 +40,9 @@
  | $exists | A value is set for the key	      | {"arr" : {"$exists" : true } }    |
  | $all    | Contains all of the given values |	{"arr" : {"$all" : ["b", "c"] } } |
  
+    ConditionalJSONObject *json = [[ConditionalJSONObject alloc] init];
+    [json addOperationalValue:@{@"$lt":@2} forKey:@"num"];
+ 
  @param value 검색할 Dictionary 값
  @param key   검색할 키
  */
@@ -48,6 +54,9 @@
  | Key | Operation | Sample                                                              |
  |-----|:----------|:--------------------------------------------------------------------|
  | $or | Or        | {"$or" : [{"arr" : {"$nin" : ["b"] } }, {"num" : {"$gte" : 2 } }] } |
+ 
+    ConditionalJSONObject *json = [[ConditionalJSONObject alloc] init];
+    [json addOrValue:@[@{@"arr":@{@"$nin":@[@"b"]}}, @{@"num":@{@"gte":@2}}] forKey:@"or"];
  
  @param value 검색할 조건 Array 값
  @param key   검색할 키
