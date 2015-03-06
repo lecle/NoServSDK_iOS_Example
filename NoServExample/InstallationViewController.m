@@ -59,7 +59,7 @@
     
     [self clearLog];
     
-    [NoServInstallation retrieveWithObjectId:@"54ab4d1d362ffe104d633228" onError:^(NSError *error) {
+    [NoServInstallation retrieveWithObjectId:@"54f943fdfccca1df54a6e0f9" onError:^(NSError *error) {
         [self appendLog:@"Error"];
         [self appendLog:error.userInfo.description];
     } onSuccess:^(JSONObject *jsonObject) {
@@ -77,7 +77,7 @@
     JSONObject *updateJsonObject = [[JSONObject alloc] init];
     [updateJsonObject putValue:@"deviceToken" forKey:@"deviceToken"];
     
-    [NoServInstallation updateWithObjectId:@"54ab4d1d362ffe104d633228" withJSONObject:updateJsonObject onError:^(NSError *error) {
+    [NoServInstallation updateWithObjectId:@"54f943fdfccca1df54a6e0f9" withJSONObject:updateJsonObject onError:^(NSError *error) {
         [self appendLog:@"Error"];
         [self appendLog:error.userInfo.description];
     } onSuccess:^(JSONObject *jsonObject) {
@@ -93,7 +93,7 @@
     
     [self clearLog];
     
-    NSString *masterKey = @"mX0mOUFYTyt93ErSMvOMsaMgsZ8zHulH";
+    NSString *masterKey = @"danhjjsa1k3p7gb9k2emsc0pe3ik9oty";
     
     [NoServInstallation queryListWithConditionObject:nil withMasterKey:masterKey onError:^(NSError *error) {
         [self appendLog:@"Error"];
@@ -111,7 +111,7 @@
     
     [self clearLog];
     
-    NSString *masterKey = @"mX0mOUFYTyt93ErSMvOMsaMgsZ8zHulH";
+    NSString *masterKey = @"danhjjsa1k3p7gb9k2emsc0pe3ik9oty";
     
     [NoServInstallation deleteWithObjectId:@"54ab4d1d362ffe104d6332281"  withMasterKey:masterKey onError:^(NSError *error2) {
         [self appendLog:@"Error"];

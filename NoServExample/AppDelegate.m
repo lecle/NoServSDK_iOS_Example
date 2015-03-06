@@ -21,7 +21,7 @@
     [self enablePushNotification];
     
 
-    [NoServ initializeWithApplicationId:@"xDTaEsKtRTxNAG2unoN0Ivi9TEMEi1Av" withRESTAPIKey:@"S5ZJlFnC5lHIILr4r2LhyMfazVZiNJbW"];
+    [NoServ initializeWithApplicationId:@"j93w5wj52af9a4iagvjom5cpihk6gviy" withRESTAPIKey:@"0c09q5tfvquxrarymckp64fpf1orpvr8"];
     return YES;
 }
 
